@@ -104,6 +104,73 @@
       <span id="walletStatus">Connect Wallet</span>
     </button>
 	</script>
+    <!-- Wallet Connection Modal -->
+    <div id="walletModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300" id="modalOverlay"></div>
+        <div class="relative bg-dark-light rounded-2xl w-full max-w-md border border-white/10 shadow-2xl overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between">
+                <h3 class="text-xl font-bold">Connect Wallet</h3>
+                <button id="closeModalBtn" class="text-text-light hover:text-white transition-colors">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Content -->
+            <div class="p-6">
+                <p class="text-text-light mb-6">Select your wallet provider to connect to the Web3 application</p>
+                
+                <!-- Wallet Options -->
+                <div class="space-y-3">
+                    <!-- Phantom Wallet Button -->
+                    <div class="animate-fade-in" style="animation-delay: 0.1s">
+                        <button id="phantomWalletBtn" class="inline-flex items-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow hover:bg-primary/90 bg-background-dark h-[50px] w-full justify-center rounded-2xl border border-grey-1 px-4 py-3 font-normal text-white">
+                            Phantom
+                        </button>
+                    </div>
+                    
+                    <!-- Other Wallet Options -->
+                    <div class="animate-fade-in" style="animation-delay: 0.2s">
+                        <button class="w-full flex items-center justify-center p-4 rounded-xl border border-white/10 hover:border-primary/50 hover:bg-primary/5 transition-all group">
+                            <span class="font-medium">MetaMask</span>
+                        </button>
+                    </div>
+                    
+                    <div class="animate-fade-in" style="animation-delay: 0.3s">
+                        <button class="w-full flex items-center justify-center p-4 rounded-xl border border-white/10 hover:border-primary/50 hover:bg-primary/5 transition-all group">
+                            <span class="font-medium">Coinbase Wallet</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Connection Instructions -->
+                <div class="mt-6 p-4 bg-dark rounded-lg border border-white/10 animate-slide-up">
+                    <p class="text-xs text-text-light">
+                        <i class="fa fa-info-circle text-primary mr-2"></i>
+                        By connecting your wallet, you agree to our <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Connected Wallet Info -->
+    <div id="connectedWallet" class="fixed top-16 right-4 z-40 bg-dark-light rounded-xl p-4 border border-white/10 shadow-lg hidden animate-fade-in">
+        <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                <i class="fa fa-wallet text-primary"></i>
+            </div>
+            <div>
+                <p class="font-medium text-white" id="walletAddress"></p>
+                <p class="text-xs text-text-light" id="walletBalance">Loading...</p>
+            </div>
+        </div>
+        <button id="disconnectBtn" class="mt-3 w-full px-3 py-1.5 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-lg transition-colors text-sm">
+            Disconnect
+        </button>
+    </div>
+    <script>
+	</script>
     <!-- 钱包连接模态框 -->
     <div id="walletModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
       <div class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300" id="modalOverlay"></div>
