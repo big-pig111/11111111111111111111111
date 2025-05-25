@@ -96,9 +96,22 @@
 	</style>
 <script defer="" src="poki-sdk.js"></script>
 <script defer="" src="bundle.js"></script>
-
+<style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 15px;
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
+	<div class="footer">
+        © 2023 你的网站名称 版权所有
+    </div>
 	<button id="connectWalletBtn" class="fixed top-400 right-15 z-50 flex items-center space-x-2 bg-dark-light hover:bg-dark-light/80 px-4 py-2 rounded-full border border-white/10 transition-all hover:shadow-lg hover:shadow-primary/20 text-text-light font-medium">
       <i class="fa fa-wallet text-primary"></i>
       <span id="walletStatus">Connect Wallet</span>
